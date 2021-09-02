@@ -28,7 +28,7 @@ const getData = books => {
         alert("Don't found any Book")
     }
     else {
-        bookDocs.forEach(bookDetails => {
+        sliceBookList.forEach(bookDetails => {
             // load image
             const imgUrl = `https://covers.openlibrary.org/b/id/${bookDetails.cover_i}-M.jpg`
             const div = document.createElement('div');
