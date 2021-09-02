@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Archive</title>
+    <!-- link favicon -->
+    <link rel="shortcut icon" href="Images/favicon.png" type="image/x-icon">
+    <!-- link css -->
+    <link rel="stylesheet" href="css-styles/style.css">
+    <!-- link bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+</head>
+
+<body class="body">
+
+    <header>
+        <div class="text-center mt-5 ">
+            <img src="images/icon.png" alt="">
+        </div>
+        <div class="text-center d-flex justify-content-center mt-5">
+            <input id="input" class="form-control me-2 w-25 border-danger " type="search"
+                placeholder="Search your favourite Book" aria-label="Search">
+            <button onclick="loadData()" class="btn btn-outline-danger text-light bg-danger"
+                type="submit">Search</button>
+        </div>
+    </header>
+
+    <main>
+        <div id="card" class=" row row-cols-1 row-cols-md-3 g-4 m-2">
+
+        </div>
+    </main>
+
+
+    <!-- link bootstrap js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+    <!-- link custom js -->
+    <script src="javascript/app.js"></script>
+</body>
+
+</html>
