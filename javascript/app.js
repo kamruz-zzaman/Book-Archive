@@ -21,8 +21,8 @@ const getData = books => {
     const card = document.getElementById('card');
     // reset card
     card.textContent = "";
-    // show up to 30 books
-    bookDocs.length = 30;
+    // show up to 20 books
+    const sliceBookList = bookDocs.slice(0, 20);
     // error handle
     if (books.numFound === 0) {
         alert("Don't found any Book")
@@ -30,6 +30,7 @@ const getData = books => {
     else {
         bookDocs.forEach(bookDetails => {
             // load image
+            console.log(bookDetails.length);
             const imgUrl = `https://covers.openlibrary.org/b/id/${bookDetails.cover_i}-M.jpg`
             const div = document.createElement('div');
             div.classList = ("col");
@@ -39,12 +40,12 @@ const getData = books => {
                 <div class="card h-100 ">
                     <img height="500px" width="400px" src="${imgUrl}" class="mx-auto"  alt="${bookDetails.author_name}">
                     <div class="card-body">
-                        <h5 class="card-title">${bookDetails.title}</h5>
+                        <h5 class="card-title fw-bold">${bookDetails.title}</h5>
                     </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Author Name: Unknown</li>
-                            <li class="list-group-item">First Publish Year: ${bookDetails.first_publish_year}</li>
-                            <li class="list-group-item">Publisher: ${bookDetails.publisher}</li >
+                            <li class="list-group-item"><span class="fw-bold">Author Name:</span> Unknown</li>
+                            <li class="list-group-item"><span class="fw-bold">First Publish Year:</span> ${bookDetails.first_publish_year}</li >
+                        <li class="list-group-item"><span class="fw-bold">Publisher:</span> ${bookDetails.publisher}</li >
                         </ul>
                 </div>`
                 card.appendChild(div);
@@ -54,12 +55,12 @@ const getData = books => {
                 <div class="card h-100 ">
                     <img height="500px" width="400px" src="${imgUrl}" class="mx-auto"  alt="${bookDetails.author_name}">
                     <div class="card-body">
-                        <h5 class="card-title">${bookDetails.title}</h5>
+                        <h5 class="card-title fw-bold">${bookDetails.title}</h5>
                     </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Author Name: ${bookDetails.author_name}</li>
-                            <li class="list-group-item">First Publish Year: Not Found</li>
-                            <li class="list-group-item">Publisher: ${bookDetails.publisher}</li >
+                        <li class="list-group-item"><span class="fw-bold">Author Name:</span> ${bookDetails.author_name}</li>
+                            <li class="list-group-item"><span class="fw-bold">First Publish Year:</span> Not Found</li>
+                            <li class="list-group-item"><span class="fw-bold">Publisher:</span> ${bookDetails.publisher}</li >
                         </ul>
                 </div>`
                 card.appendChild(div);
@@ -69,13 +70,13 @@ const getData = books => {
                 <div class="card h-100 ">
                     <img height="500px" width="400px" src="images/not-found.jpg" class="mx-auto"  alt="${bookDetails.author_name}">
                     <div class="card-body">
-                        <h5 class="card-title">${bookDetails.title}</h5>
+                        <h5 class="card-title fw-bold">${bookDetails.title}</h5>
                     </div>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Author Name: ${bookDetails.author_name}</li>
-                            <li class="list-group-item">First Publish Year: ${bookDetails.first_publish_year}</li >
-                            <li class="list-group-item">Publisher: ${bookDetails.publisher}</li >
-                        </ul >
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><span class="fw-bold">Author Name:</span> ${bookDetails.author_name}</li>
+                        <li class="list-group-item"><span class="fw-bold">First Publish Year:</span> ${bookDetails.first_publish_year}</li >
+                        <li class="list-group-item"><span class="fw-bold">Publisher:</span> ${bookDetails.publisher}</li >
+                    </ul>
                 </div > `
                 card.appendChild(div);
             }
@@ -84,12 +85,12 @@ const getData = books => {
                 <div class="card h-100 ">
                     <img height="500px" width="400px" src="images/not-found.jpg" class="mx-auto"  alt="${bookDetails.author_name}">
                     <div class="card-body">
-                        <h5 class="card-title">${bookDetails.title}</h5>
+                        <h5 class="card-title fw-bold">${bookDetails.title}</h5>
                     </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Author Name: ${bookDetails.author_name}</li>
-                            <li class="list-group-item">First Publish Year: ${bookDetails.first_publish_year}</li >
-                            <li class="list-group-item">Publisher: Not Found</li >
+                        <li class="list-group-item"><span class="fw-bold">Author Name:</span> ${bookDetails.author_name}</li>
+                        <li class="list-group-item"><span class="fw-bold">First Publish Year:</span> ${bookDetails.first_publish_year}</li >
+                            <li class="list-group-item"><span class="fw-bold">Publisher:<span> Not Found</li >
                         </ul >
                 </div > `
                 card.appendChild(div);
@@ -99,12 +100,12 @@ const getData = books => {
                 <div class="card h-100 ">
                     <img height="500px" width="400px" src="${imgUrl}" class="mx-auto"  alt="${bookDetails.author_name}">
                     <div class="card-body">
-                        <h5 class="card-title">${bookDetails.title}</h5>
+                        <h5 class="card-title fw-bold">${bookDetails.title}</h5>
                     </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item">Author Name: ${bookDetails.author_name}</li>
-                            <li class="list-group-item">First Publish Year: ${bookDetails.first_publish_year}</li >
-                            <li class="list-group-item">Publisher: ${bookDetails.publisher}</li >
+                            <li class="list-group-item"><span class="fw-bold">Author Name:</span> ${bookDetails.author_name}</li>
+                            <li class="list-group-item"><span class="fw-bold">First Publish Year:</span> ${bookDetails.first_publish_year}</li >
+                            <li class="list-group-item"><span class="fw-bold">Publisher:</span> ${bookDetails.publisher}</li >
                         </ul >
                 </div > `
                 card.appendChild(div);
@@ -114,4 +115,7 @@ const getData = books => {
     // total search result 
     const footer = document.getElementById('footer');
     footer.innerHTML = `<p class="mb-0">Total result found:${books.numFound}</p>`
+    // show total result
+    const searchResult = document.getElementById('searchResult');
+    searchResult.innerHTML = `<p class="mb-0">Show result:${sliceBookList.length}</p>`
 }
