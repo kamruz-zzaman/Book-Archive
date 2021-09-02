@@ -30,7 +30,6 @@ const getData = books => {
     else {
         bookDocs.forEach(bookDetails => {
             // load image
-            console.log(bookDetails.length);
             const imgUrl = `https://covers.openlibrary.org/b/id/${bookDetails.cover_i}-M.jpg`
             const div = document.createElement('div');
             div.classList = ("col");
